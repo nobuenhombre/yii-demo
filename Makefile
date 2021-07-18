@@ -9,7 +9,7 @@ help: Makefile
 ## install: Install YII2
 install:
 	mkdir -p src &\
-    composer create-project --prefer-dist yiisoft/yii2-app-advanced src
+	composer create-project --prefer-dist yiisoft/yii2-app-advanced src
 
 ## init-dev: Init Development YII2
 init-dev:
