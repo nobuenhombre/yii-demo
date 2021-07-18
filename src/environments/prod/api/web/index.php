@@ -1,4 +1,10 @@
 <?php
+
+set_time_limit(60);
+ini_set('memory_limit', 134217728);
+ini_set('post_max_size', '50M');
+ini_set('upload_max_filesize', '50M');
+
 defined('YII_DEBUG') or define('YII_DEBUG', false);
 defined('YII_ENV') or define('YII_ENV', 'prod');
 
