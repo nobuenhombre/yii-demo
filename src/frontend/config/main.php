@@ -17,12 +17,6 @@ $config = [
     'bootstrap' => ['log'],
     'controllerNamespace' => 'frontend\controllers',
     'components' => [
-        'RedisNative' => [
-            'class' => 'common\components\RedisNative',
-            'host' => 'localhost',
-            'port' => 6379,
-            'dbIndex' => 4,
-        ],
         'request' => [
             'csrfParam' => '_csrf-frontend',
         ],
