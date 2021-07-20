@@ -1,0 +1,25 @@
+#Restrict50M {
+    margin-bottom: 20px;
+}
+
+.my-icon {
+    padding-left: 32px;
+    background-position: left center;
+    background-repeat: no-repeat;
+}
+
+.my-icon-loading {
+    background-image: url("/img/loading.gif");
+}
+
+.my-icon-success {
+    background-image: url("/img/success.png");
+}
+
+.my-icon-error {
+    background-image: url("/img/error.png");
+}
+
+.my-icon-info {
+    background-image: url("/img/info.png");
+}
