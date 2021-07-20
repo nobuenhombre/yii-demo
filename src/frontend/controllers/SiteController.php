@@ -3,7 +3,7 @@
 namespace frontend\controllers;
 
 use common\components\SliderStore;
-use common\services\RedisNative;
+use common\services\RedisNativeService;
 use frontend\models\UploadForm;
 use Yii;
 use yii\helpers\BaseArrayHelper;
@@ -24,7 +24,7 @@ class SiteController extends Controller
     public function __construct(
         $id,
         $module,
-        RedisNative $redisService,
+        RedisNativeService $redisService,
         $config = [])
     {
         parent::__construct($id, $module, $config);

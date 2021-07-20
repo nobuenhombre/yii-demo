@@ -10,7 +10,7 @@ use Yii;
  *
  * @package commmon\services
  */
-class RedisNative
+class RedisNativeService
 {
     // @var string
     private $host;

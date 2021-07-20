@@ -11,4 +11,7 @@ return [
         'port' => 6379,
         'dbIndex' => 4,
     ],
+    'SliderTimer' => [
+        'timeout' => 1800, //1800 = 30 минут * 60 секунд
+    ]
 ];
