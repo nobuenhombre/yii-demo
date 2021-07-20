@@ -20,4 +20,8 @@ $config = yii\helpers\ArrayHelper::merge(
     require __DIR__ . '/../config/main-local.php'
 );
 
-(new yii\web\Application($config))->run();
+$app = new yii\web\Application($config);
+
+require_once __DIR__ . '/../../common/config/di.php';
+
+$app->run();

@@ -1,60 +1,43 @@
 <?php
 
-namespace common\components;
+namespace common\services;
 
-use yii\base\BaseObject;
 use Exception;
 use Yii;
 
 /**
  * Class RedisNative
  *
- * @package commmon\components
+ * @package commmon\services
  */
-class RedisNative extends BaseObject
+class RedisNative
 {
-    public const DEFAULT_HOST = 'localhost';
-    public const DEFAULT_PORT = 6379;
-    public const DEFAULT_DB_INDEX = 0;
-
     // @var string
-    public $host;
+    private $host;
 
     // @var integer
-    public $port;
+    private $port;
 
-    // @var integer
-    public $dbIndex;
+    // @var int
+    private $dbIndex;
 
     // @var \Redis
     private $connect;
 
     /**
-     * @return \Redis
-     */
-    public function getConnect():\Redis {
-        return $this->connect;
-    }
-
-    /**
+     * RedisNative constructor.
+     *
+     * @param   string  $host
+     * @param   int     $port
+     * @param   int     $dbIndex
+     *
      * @throws \Exception
      */
-    public function init()
-    {
-        parent::init();
-
-        if ($this->host === null) {
-            $this->host = static::DEFAULT_HOST;
-        }
-
-        if ($this->port === null) {
-            $this->port = static::DEFAULT_PORT;
-        }
-
-        if ($this->dbIndex === null) {
-            $this->port = static::DEFAULT_DB_INDEX;
-        }
-
+    public function __construct(
+        string $host,
+        int $port,
+        int $dbIndex
+    ) {
         $this->connect = null;
 
         if (!extension_loaded('redis')) {
@@ -89,5 +72,12 @@ class RedisNative extends BaseObject
                 )
             );
         }
+    }
+
+    /**
+     * @return \Redis
+     */
+    public function getConnect():\Redis {
+        return $this->connect;
     }
 }
